@@ -18,10 +18,13 @@
           <li><a href="#">How to Play</a></li>
         </ul>
         <ul class="nav pull-right">
-          <li><a href="#">Login / SignUp</a></li>
+          <li><%=link_to "Login", new_user_session_path%></li>
+          <li><%=link_to "SignUp", new_user_registration_path%></li>
         </ul>
       </div>
     </div>
+    <div class = "alert"><%=alert %></div>
+    <div class = "notice"><%=notice%></div>
 
     <%= yield %>
   </div>
