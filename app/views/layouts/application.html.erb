@@ -13,18 +13,24 @@
       <div class="navbar-inner">
         <a class="brand" href="#">Lord of War</a>
         <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><%=link_to "Home", root_path%></li>
           <li><a href="#">High Scores</a></li>
           <li><a href="#">How to Play</a></li>
         </ul>
         <ul class="nav pull-right">
-          <li><%=link_to "Login", new_user_session_path%></li>
-          <li><%=link_to "SignUp", new_user_registration_path%></li>
+          <% if current_user %>
+            <li><a>Welcome! <%=current_user.email%></a></li>
+            <li><%=link_to "Logout", destroy_user_session_path, :method => :delete%></li>
+          <%else%>
+            <li><%=link_to "Login", new_user_session_path%></li>
+            <!-- <li><a href="/users/sign_up" data-toggle="modal" data-target=".modal">Sign Up!</a></li> -->
+            <li><%=link_to "SignUp", new_user_registration_path%></li>
+          <%end%>
         </ul>
       </div>
     </div>
-    <div class = "alert"><%=alert %></div>
-    <div class = "notice"><%=notice%></div>
+<!--     <div class = "alert"><%=alert %></div>
+    <div class = "notice"><%=notice%></div> -->
 
     <%= yield %>
   </div>
