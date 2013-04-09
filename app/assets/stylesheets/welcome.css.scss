@@ -3,5 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-background-image: url("http://wallpaperuser.com/wp-content/uploads/2011/10/abandon-city-wallpaper.jpg");
+    background-image: url("http://wallpaperuser.com/wp-content/uploads/2011/10/abandon-city-wallpaper.jpg");
   }  
+
+.btn{
+  margin-left: 10%;
+  margin-top: 5%;
+  height: 100px;
+  width: 200px;
+  padding:10px;
+}
+
+.text_in_button{
+  vertical-align:middle;
+  margin-top: 40px;
+}
